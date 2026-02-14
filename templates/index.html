@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Will You Be My Valentine?</title>
+
+    <!-- Correct way (NO Windows path) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">Will you be my Valentine? 💖</h1>
+
+        <div class="buttons">
+            <button id="yesBtn" class="yes">Yes ❤️</button>
+            <button id="noBtn" class="no">No 😢</button>
+        </div>
+
+        <div id="loveMessage" class="hidden">
+            <h2>You just made me the happiest person alive! 💕</h2>
+            <p>I promise to love you forever ❤️</p>
+            <div class="hearts">💖 💕 💘 💞 💓</div>
+        </div>
+    </div>
+
+    <!-- Correct way (NO Windows path) -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
