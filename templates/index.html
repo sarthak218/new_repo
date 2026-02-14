@@ -1,31 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Will You Be My Valentine?</title>
-
-    <!-- Correct way (NO Windows path) -->
+    <title>Will You Be My Valentine? 💖</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <div class="container">
-        <h1 class="title">Will you be my Valentine? 💖</h1>
+<!-- 🎵 Background Music -->
+<audio id="bgMusic" loop>
+    <source src="{{ url_for('static', filename='music.mp3') }}" type="audio/mpeg">
+</audio>
 
-        <div class="buttons">
-            <button id="yesBtn" class="yes">Yes ❤️</button>
-            <button id="noBtn" class="no">No 😢</button>
-        </div>
+<div class="container">
 
-        <div id="loveMessage" class="hidden">
-            <h2>You just made me the happiest person alive! 💕</h2>
-            <p>I promise to love you forever ❤️</p>
-            <div class="hearts">💖 💕 💘 💞 💓</div>
-        </div>
+    <h1>💖 Babe, Will You Be My Valentine? 💖</h1>
+
+    <!-- 📸 Slideshow -->
+    <div class="slideshow">
+        <img src="{{ url_for('static', filename='images/pic1.jpg') }}" class="slide">
+        <img src="{{ url_for('static', filename='images/pic2.jpg') }}" class="slide">
+        <img src="{{ url_for('static', filename='images/pic3.jpg') }}" class="slide">
     </div>
 
-    <!-- Correct way (NO Windows path) -->
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Buttons -->
+    <div class="buttons">
+        <button id="yesBtn">YES ❤️</button>
+        <button id="noBtn">NO 😢</button>
+    </div>
+
+    <!-- Love Message -->
+    <div id="loveMessage" class="hidden">
+
+        <h2>💖 Happy Valentine’s Day Babe 💖</h2>
+
+        <p>
+            You are my peace, my happiness,
+            and the most beautiful chapter of my life.
+            I promise to love you more every single day. ❤️
+        </p>
+
+        <button id="gameBtn" class="game-btn">
+            🎹 Play Love Piano Tiles 💖
+        </button>
+
+    </div>
+
+    <!-- 🎹 Piano Tiles Game -->
+    <div id="gameArea" class="hidden">
+
+        <h2>🎹 Love Piano Tiles 💖</h2>
+        <p>Score: <span id="score">0</span></p>
+        <p>Time Left: <span id="timer">30</span>s</p>
+
+        <div id="pianoGame"></div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 </html>
